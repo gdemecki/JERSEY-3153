@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+  <Get class="java.lang.System" name="out">
+    <Call name="println">
+      <Arg>*** JETTY-CONTEXT loaded</Arg>
+    </Call>
+  </Get>
+
+</Configure>

@@ -1,0 +1,15 @@
+<configuration scan="true" scanPeriod="3 minutes">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date{HH:mm:ss.SSS} %-5level | %logger{50}: %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.glassfish.jersey" level="ALL" />
+
+<!--   <logger name="org.eclipse.jetty" level="ALL" /> -->
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
