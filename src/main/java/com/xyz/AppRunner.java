@@ -6,6 +6,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
+import org.jboss.weld.environment.se.Weld;
 
 /**
  * Main entry point of the application.
@@ -22,6 +23,8 @@ public class AppRunner {
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
         context.setResourceBase("src/main/webapp");
+
+        registerWeld();
 
         Server jettyServer = new Server(8080);
         jettyServer.setHandler(context);
@@ -42,6 +45,20 @@ public class AppRunner {
         } finally {
             jettyServer.destroy();
         }
+    }
+
+    private static Weld registerWeld() {
+        final Weld weld = new Weld();
+        weld.initialize();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                weld.shutdown();
+            }
+        }));
+
+        return weld;
     }
 
 }
