@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>jersey.bugs.showcase</groupId>
-  <artifactId>JERSEY-X</artifactId>
+  <artifactId>JERSEY-3153</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
 
-  <name>Jersey bug showcase</name>
+  <name>JERSEY-3153 bug showcase</name>
   <description>Please run com.xyz.AppRunner to encounter the exception.</description>
 
   <properties>
