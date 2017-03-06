@@ -31,4 +31,13 @@ The problem is strictly related to the Weld integration. Because without depende
 * Downgrade to Jersey 2.14
 * Remove Weld
 * Remove jersey-bean-validation module
+* Use HK2 binding to override the problematic mapper:
+
+        config.register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bind(com.xyz.rest.errors.ValidationExceptionMapper.class).to(ExceptionMapper.class)
+                        .in(Singleton.class);
+            }
+        });
 
