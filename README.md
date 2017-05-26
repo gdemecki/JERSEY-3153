@@ -1,4 +1,6 @@
-# JERSEY-3153 bug showcase
+# JERSEY-3153 (#3425) bug showcase
+
+After Jersey's migration from https://java.net, this bug is available as [Issue #3425](https://github.com/jersey/jersey/issues/3425).
 
 ## Description
 
